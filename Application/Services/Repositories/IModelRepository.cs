@@ -3,6 +3,6 @@ using Domain.Entities;
 
 namespace Application.Services.Repositories;
 
-public interface IModelRepository:IAsyncRepository<Model,Guid>
+public interface IModelRepository:IAsyncRepository<Model,int>
 {
 }

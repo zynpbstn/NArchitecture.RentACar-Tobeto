@@ -3,6 +3,6 @@ using Domain.Entities;
 
 namespace Application.Services.Repositories;
 
-public interface ICarRepository:IAsyncRepository<Car,Guid>
+public interface ICarRepository:IAsyncRepository<Car,int>
 {
 }

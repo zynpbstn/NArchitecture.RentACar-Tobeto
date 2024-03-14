@@ -55,6 +55,7 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IAsyncRepository<T
 
     public async Task<TEntity> UpdateAsync(TEntity entity)
     {
+        entity.UpdatedDate = DateTime.UtcNow;
         Context.Update(entity);
         await Context.SaveChangesAsync();
         return entity;

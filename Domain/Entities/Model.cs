@@ -2,9 +2,9 @@
 
 namespace Domain.Entities;
 
-public class Model : BaseEntity<Guid>
+public class Model : BaseEntity<int>
 {
-    public Guid BrandId { get; set; } //1
+    public int BrandId { get; set; } //1
     public string Name { get; set; } //"A6"
 
     public virtual Brand? Brand { get; set; }
@@ -16,7 +16,7 @@ public class Model : BaseEntity<Guid>
         Cars = new HashSet<Car>();
     }
 
-    public Model(Guid id, Guid brandId, string name)
+    public Model(int id, int brandId, string name)
     {
         Id = id;
         BrandId = brandId;

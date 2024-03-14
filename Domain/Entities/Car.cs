@@ -2,7 +2,7 @@
 
 namespace Domain.Entities;
 
-public class Car : BaseEntity<Guid>
+public class Car : BaseEntity<int>
 {
     public int ModelId { get; set; }
     public int ModelYear { get; set; }
@@ -12,14 +12,13 @@ public class Car : BaseEntity<Guid>
 
     public Model Model { get; set; }
 
-    public virtual ICollection<CarImage> CarImages { get; set; }
 
     public Car()
     {
-        CarImages = new HashSet<CarImage>();
+
     }
 
-    public Car(Guid id, int modelId, int modelYear,
+    public Car(int id, int modelId, int modelYear,
         string plate, int state, double dailyPrice) : this()
     {
         Id = id;

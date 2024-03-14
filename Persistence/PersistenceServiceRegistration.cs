@@ -15,6 +15,9 @@ public static class PersistenceServiceRegistration
                                               options.UseSqlServer(configuration.GetConnectionString("TobetoNet3ANArch")));
 
         services.AddScoped<IBrandRepository, BrandRepository>();
+        services.AddScoped<ICarRepository, CarRepository>();
+        services.AddScoped<IModelRepository, ModelRepository>();
+
         return services;
     }
 } 

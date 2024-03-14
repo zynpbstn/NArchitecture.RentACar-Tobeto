@@ -3,9 +3,9 @@ using System.Reflection;
 
 namespace Domain.Entities;
 
-public class Brand : BaseEntity<Guid>
+public class Brand : BaseEntity<int>
 {
-    public string Name { get; set; }  //Audi 
+    public string Name { get; set; }  
 
 
     public ICollection<Model> Models { get; set; }
@@ -15,7 +15,7 @@ public class Brand : BaseEntity<Guid>
         Models = new HashSet<Model>();
     }
 
-    public Brand(Guid id, string name) : this()
+    public Brand(int id, string name) : this()
     {
         Id = id;
         Name = name;
