@@ -1,5 +1,11 @@
-﻿using FluentValidation;
+﻿using Core.Application.Pipelines.Logging;
+using Core.Application.Pipelines.Performance;
+using Core.Application.Pipelines.Validation;
+using Core.CrossCutting.Logging.Serilog;
+using Core.CrossCutting.Logging.Serilog.Loggers;
+using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
 using System.Reflection;
