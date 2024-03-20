@@ -1,6 +1,6 @@
 ﻿using Core.Persistence.Repositories;
-using System.Reflection;
 
+using System.Reflection;
 namespace Domain.Entities;
 
 public class Brand : BaseEntity<int>

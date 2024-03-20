@@ -9,4 +9,6 @@ public class UpdateModelCommand:IRequest<UpdatedModelResponse>
     public int Id { get; set; }
     public int BrandId {  get; set; }
     public string Name { get; set; }
+    public bool BypassCache { get; }
+    public string CacheKey => "model-list";
 }

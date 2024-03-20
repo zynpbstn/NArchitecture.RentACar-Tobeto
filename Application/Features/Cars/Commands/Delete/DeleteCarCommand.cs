@@ -6,4 +6,6 @@ namespace Application.Features.Cars.Commands.Delete;
 public class DeleteCarCommand : IRequest<DeletedCarResponse>
 {
     public int Id { get; set; }
+    public bool BypassCache { get; }
+    public string CacheKey => "car-list";
 }

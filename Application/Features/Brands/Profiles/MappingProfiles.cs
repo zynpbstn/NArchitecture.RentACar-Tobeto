@@ -1,7 +1,9 @@
-﻿using Application.Features.Brands.Commands.Create;
+﻿using Amazon.Runtime;
+using Application.Features.Brands.Commands.Create;
 using Application.Features.Brands.Commands.Delete;
 using Application.Features.Brands.Commands.Update;
 using Application.Features.Brands.Dtos;
+using Application.Features.Brands.Models;
 using AutoMapper;
 using Domain.Entities;
 
@@ -22,6 +24,9 @@ public class MappingProfiles:Profile
 
         CreateMap<Brand, GetAllBrandsResponse>().ReverseMap();
         CreateMap<Brand, GetByIdBrandResponse>().ReverseMap();
+
+        CreateMap<Brand, GetListBrandsResponse>().ReverseMap();
+        CreateMap<IPaginate<Brand>, BrandListModel>().ReverseMap();
 
     }
 }

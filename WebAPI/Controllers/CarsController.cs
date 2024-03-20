@@ -40,5 +40,22 @@ namespace WebAPI.Controllers
         {
             return Ok(await Mediator.Send(command));
         }
+
+        [HttpGet("Pagination")]
+        public async Task<IActionResult> GetListPagination([FromQuery] PageRequest pageRequest)
+        {
+            GetListPaginationCarQuery query = new() { PageRequest = pageRequest };
+            CarListModel result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpPost("Dynamic")]
+        public async Task<IActionResult> GetListDynamic([FromQuery] PageRequest pageRequest, [FromBody] Dynamic dynamic)
+        {
+            GetListCarDynamicQuery carDynamicQuery = new() { PageRequest = pageRequest, Dynamic = dynamic };
+            CarListModel result = await Mediator.Send(carDynamicQuery);
+            return Ok(result);
+        }
+
     }
 }

@@ -16,6 +16,9 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
         builder.Property(x => x.State).HasColumnName("State");
         builder.Property(x => x.DailyPrice).HasColumnName("DailyPrice");
 
+        builder.HasQueryFilter(u => !u.DeletedDate.HasValue);
+
+
         builder.HasOne(x => x.Model);
     }
 }

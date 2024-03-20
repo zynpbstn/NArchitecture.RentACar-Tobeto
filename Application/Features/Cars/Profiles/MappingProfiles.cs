@@ -1,7 +1,9 @@
-﻿using Application.Features.Cars.Commands.Create;
+﻿using Amazon.Runtime;
+using Application.Features.Cars.Commands.Create;
 using Application.Features.Cars.Commands.Delete;
 using Application.Features.Cars.Commands.Update;
 using Application.Features.Cars.Dtos;
+using Application.Features.Cars.Models;
 using AutoMapper;
 using Domain.Entities;
 
@@ -22,5 +24,8 @@ public class MappingProfiles : Profile
 
         CreateMap<Car, GetAllCarsResponse>().ReverseMap();
         CreateMap<Car, GetByIdCarResponse>().ReverseMap();
+
+        CreateMap<IPaginate<Car>, CarListModel>().ReverseMap();
+
     }
 }
