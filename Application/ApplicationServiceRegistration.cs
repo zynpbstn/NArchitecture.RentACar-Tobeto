@@ -1,4 +1,5 @@
-﻿using Core.Application.Pipelines.Logging;
+﻿using Core.Application.Pipelines.Caching;
+using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Performance;
 using Core.Application.Pipelines.Validation;
 using Core.CrossCutting.Logging.Serilog;
